@@ -1,0 +1,122 @@
+<%- layout("/layouts/boilerplate") %>
+<body>
+  <div class="row offset-2">
+    <div class="col-md-8">
+      <br /><br />
+
+      <h2>Add new listing</h2>
+
+      <form
+        method="POST"
+        action="/listings"
+        class="needs-validation"
+        novalidate
+        enctype="multipart/form-data"
+      >
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            name="listing[title]"
+            type="text"
+            placeholder="Enter title"
+            class="form-control"
+            required
+          />
+          <div class="valid-feedback">Title is Valid!</div>
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label
+          ><textarea
+            name="listing[description]"
+            type="text"
+            placeholder="write description"
+            class="form-control"
+            required
+          ></textarea>
+          <div class="invalid-feedback">Invalid data</div>
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label">Image Link</label>
+          <input
+            name="listing[image]"
+            type="text"
+            placeholder="paste image URL/link"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label">Upload Image File</label>
+          <input
+            name="listing[image]"
+            type="file"
+            placeholder="Upload Image"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="row">
+          <div class="mb-3 col-md-4">
+            <label for="price" class="form-label">Price</label>
+            <input
+              name="listing[price]"
+              placeholder="enter price"
+              class="form-control"
+              type="number"
+              required
+            />
+            <div class="invalid-feedback">Invalid Price</div>
+          </div>
+
+          <div class="mb-3 col-md-8">
+            <label for="location" class="form-label">Location</label>
+            <input
+              name="listing[location]"
+              type="text"
+              placeholder="enter location"
+              class="form-control"
+              required
+            />
+            <div class="valid-feedback">Location is Perfect!</div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="country" class="form-label">Country</label>
+          <input
+            name="listing[country]"
+            type="text"
+            placeholder="enter country"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Enter a Valid country</div>
+        </div>
+        <div class="mb-3">
+          <label for="category" class="form-label">Category</label>
+          <select id="category" name="listing[category]" class="form-control">
+            <option value="Mountains">Mountains</option>
+            <option value="Beaches">Beaches</option>
+            <option value="Skyscrapers">Skyscrapers</option>
+            <option value="Apartments">Apartments</option>
+            <option value="Rooms">Rooms</option>
+            <option value="Pools">Pools</option>
+            <option value="Arctic">Arctic</option>
+            <option value="Hotels">Hotels</option>
+            <option value="Farms">Farms</option>
+            <option value="Lakes">Lakes</option>
+            <option value="Camps">Camps</option>
+            <option value="Forts">Forts</option>
+            <option value="Adventures">Adventures</option>
+            <option value="others">others</option>
+
+
+          </select>
+        </div>
+        <br /><br />
+
+        <button class="btn btn-dark add-btn">ADD</button>
+        <br /><br />
+      </form>
+    </div>
+  </div>
+</body>
